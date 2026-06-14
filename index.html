@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aesthetic Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-blur one"></div>
+  <div class="bg-blur two"></div>
+
+  <header class="hero">
+    <h1>✨ Aesthetic Gallery</h1>
+    <p>Interactive responsive image gallery with categories</p>
+    <button id="themeToggle">🌙 Toggle Theme</button>
+  </header>
+
+  <div class="filters">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="nature">Nature</button>
+    <button data-filter="buildings">Buildings</button>
+    <button data-filter="birds">Birds</button>
+    <button data-filter="fish">Fish</button>
+    <button data-filter="pets">Pets</button>
+    <button data-filter="wild">Wild</button>
+    <button data-filter="vehicles">Vehicles</button>
+  </div>
+
+  <section class="gallery">
+
+    <!-- Nature -->
+    <div class="card nature"><img src="https://picsum.photos/id/1015/600/400" alt="Nature"></div>
+    <div class="card nature"><img src="https://picsum.photos/id/1020/600/500" alt="Nature"></div>
+
+    <!-- Buildings -->
+    <div class="card buildings"><img src="https://picsum.photos/id/1031/600/500" alt="Buildings"></div>
+    <div class="card buildings"><img src="https://picsum.photos/id/1043/600/400" alt="Buildings"></div>
+
+    <!-- Birds -->
+    <div class="card birds"><img src="https://picsum.photos/id/1025/600/450" alt="Bird"></div>
+    <div class="card birds"><img src="https://picsum.photos/id/1062/600/500" alt="Bird"></div>
+
+    <!-- Fish -->
+    <div class="card fish"><img src="https://picsum.photos/id/1074/600/400" alt="Fish"></div>
+    <div class="card fish"><img src="https://picsum.photos/id/1084/600/500" alt="Fish"></div>
+
+    <!-- Pets -->
+    <div class="card pets"><img src="https://picsum.photos/id/237/600/400" alt="Pet"></div>
+    <div class="card pets"><img src="https://picsum.photos/id/219/600/500" alt="Pet"></div>
+
+    <!-- Wild -->
+    <div class="card wild"><img src="https://picsum.photos/id/593/600/400" alt="Wild"></div>
+    <div class="card wild"><img src="https://picsum.photos/id/659/600/500" alt="Wild"></div>
+
+    <!-- Vehicles -->
+    <div class="card vehicles"><img src="https://picsum.photos/id/1071/600/400" alt="Vehicle"></div>
+    <div class="card vehicles"><img src="https://picsum.photos/id/133/600/500" alt="Vehicle"></div>
+    <div class="card vehicles"><img src="https://picsum.photos/id/183/600/400" alt="Vehicle"></div>
+    <div class="card vehicles"><img src="https://picsum.photos/id/269/600/500" alt="Vehicle"></div>
+
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <button class="nav prev">❮</button>
+    <img id="lightboxImg" alt="">
+    <button class="nav next">❯</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
