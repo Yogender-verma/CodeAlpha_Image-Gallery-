@@ -1,39 +1,82 @@
 const cards = document.querySelectorAll('.card');
-const imgs = document.querySelectorAll('.card img');
+const filterBtns = document.querySelectorAll('.filters button');
+
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
+
 const closeBtn = document.querySelector('.close');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
-const filterBtns = document.querySelectorAll('.filters button');
+
 const themeToggle = document.getElementById('themeToggle');
 
 let current = 0;
 
-imgs.forEach((img, index) => {
+/* =========================
+   GET ONLY VISIBLE CARDS
+========================= */
+function getVisibleCards() {
+  return Array.from(document.querySelectorAll('.card'))
+    .filter(card => card.style.display !== 'none');
+}
+
+/* =========================
+   OPEN LIGHTBOX
+========================= */
+document.querySelectorAll('.card img').forEach((img) => {
   img.addEventListener('click', () => {
-    current = index;
-    updateImage();
+    const visibleCards = getVisibleCards();
+
+    const clickedCard = img.parentElement;
+    current = visibleCards.indexOf(clickedCard);
+
+    updateImage(visibleCards);
     lightbox.style.display = 'flex';
   });
 });
 
-function updateImage() {
-  lightboxImg.src = imgs[current].src;
+/* =========================
+   UPDATE LIGHTBOX IMAGE
+========================= */
+function updateImage(list) {
+  lightboxImg.src = list[current].querySelector('img').src;
 }
 
+/* =========================
+   NEXT IMAGE
+========================= */
 nextBtn.onclick = () => {
-  current = (current + 1) % imgs.length;
-  updateImage();
+  const list = getVisibleCards();
+  current = (current + 1) % list.length;
+  updateImage(list);
 };
 
+/* =========================
+   PREVIOUS IMAGE
+========================= */
 prevBtn.onclick = () => {
-  current = (current - 1 + imgs.length) % imgs.length;
-  updateImage();
+  const list = getVisibleCards();
+  current = (current - 1 + list.length) % list.length;
+  updateImage(list);
 };
 
-closeBtn.onclick = () => lightbox.style.display = 'none';
+/* =========================
+   CLOSE LIGHTBOX
+========================= */
+closeBtn.onclick = () => {
+  lightbox.style.display = 'none';
+};
 
+/* Close when clicking outside image */
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = 'none';
+  }
+});
+
+/* =========================
+   KEYBOARD CONTROLS
+========================= */
 document.addEventListener('keydown', (e) => {
   if (lightbox.style.display === 'flex') {
     if (e.key === 'ArrowRight') nextBtn.click();
@@ -42,19 +85,31 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+/* =========================
+   FILTER SYSTEM
+========================= */
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
+
     document.querySelector('.active').classList.remove('active');
     btn.classList.add('active');
 
     const filter = btn.dataset.filter;
+
     cards.forEach(card => {
-      card.style.display =
-        filter === 'all' || card.classList.contains(filter) ? 'block' : 'none';
+      if (filter === 'all') {
+        card.style.display = 'block';
+      } else {
+        card.style.display =
+          card.classList.contains(filter) ? 'block' : 'none';
+      }
     });
   });
 });
 
+/* =========================
+   THEME TOGGLE
+========================= */
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('light');
 });

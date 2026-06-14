@@ -8,19 +8,21 @@
 </head>
 <body>
 
+  <!-- Background -->
   <div class="bg-blur one"></div>
   <div class="bg-blur two"></div>
 
+  <!-- Header -->
   <header class="hero">
     <h1>✨ Aesthetic Gallery</h1>
     <p>Interactive responsive image gallery with categories</p>
     <button id="themeToggle">🌙 Toggle Theme</button>
   </header>
 
+  <!-- Filters (Buildings removed) -->
   <div class="filters">
     <button class="active" data-filter="all">All</button>
     <button data-filter="nature">Nature</button>
-    <button data-filter="buildings">Buildings</button>
     <button data-filter="birds">Birds</button>
     <button data-filter="fish">Fish</button>
     <button data-filter="pets">Pets</button>
@@ -28,44 +30,72 @@
     <button data-filter="vehicles">Vehicles</button>
   </div>
 
+  <!-- Gallery -->
   <section class="gallery">
 
     <!-- Nature -->
-    <div class="card nature"><img src="https://picsum.photos/id/1015/600/400" alt="Nature"></div>
-    <div class="card nature"><img src="https://picsum.photos/id/1020/600/500" alt="Nature"></div>
+    <div class="card nature">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800" alt="Nature">
+    </div>
 
-    <!-- Buildings -->
-    <div class="card buildings"><img src="https://picsum.photos/id/1031/600/500" alt="Buildings"></div>
-    <div class="card buildings"><img src="https://picsum.photos/id/1043/600/400" alt="Buildings"></div>
+    <div class="card nature">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Nature">
+    </div>
 
-    <!-- Birds -->
-    <div class="card birds"><img src="https://picsum.photos/id/1025/600/450" alt="Bird"></div>
-    <div class="card birds"><img src="https://picsum.photos/id/1062/600/500" alt="Bird"></div>
+    <!-- Birds (ONLY BIRDS) -->
+    <div class="card birds">
+      <img src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=800" alt="Bird">
+    </div>
 
-    <!-- Fish -->
-    <div class="card fish"><img src="https://picsum.photos/id/1074/600/400" alt="Fish"></div>
-    <div class="card fish"><img src="https://picsum.photos/id/1084/600/500" alt="Fish"></div>
+    <div class="card birds">
+      <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=800" alt="Bird">
+    </div>
+
+    <!-- Fish (REAL FISH IMAGES) -->
+
+    <div class="card fish">
+      <img src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?w=800" alt="Fish">
+    </div>
+
+    <div class="card fish">
+      <img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=800" alt="Fish">
+    </div>
 
     <!-- Pets -->
-    <div class="card pets"><img src="https://picsum.photos/id/237/600/400" alt="Pet"></div>
-    <div class="card pets"><img src="https://picsum.photos/id/219/600/500" alt="Pet"></div>
+    <div class="card pets">
+      <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?w=800" alt="Dog">
+    </div>
+
+    <div class="card pets">
+      <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=800" alt="Cat">
+    </div>
 
     <!-- Wild -->
-    <div class="card wild"><img src="https://picsum.photos/id/593/600/400" alt="Wild"></div>
-    <div class="card wild"><img src="https://picsum.photos/id/659/600/500" alt="Wild"></div>
+    <div class="card wild">
+      <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=800" alt="Wild">
+    </div>
+
+    <div class="card wild">
+      <img src="https://images.unsplash.com/photo-1456926631375-92c8ce872def?w=800" alt="Wild">
+    </div>
 
     <!-- Vehicles -->
-    <div class="card vehicles"><img src="https://picsum.photos/id/1071/600/400" alt="Vehicle"></div>
-    <div class="card vehicles"><img src="https://picsum.photos/id/133/600/500" alt="Vehicle"></div>
-    <div class="card vehicles"><img src="https://picsum.photos/id/183/600/400" alt="Vehicle"></div>
-    <div class="card vehicles"><img src="https://picsum.photos/id/269/600/500" alt="Vehicle"></div>
+    <div class="card vehicles">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800" alt="Car">
+    </div>
+
+    <div class="card vehicles">
+      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800" alt="Car">
+    </div>
+
 
   </section>
 
+  <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <span class="close">&times;</span>
     <button class="nav prev">❮</button>
-    <img id="lightboxImg" alt="">
+    <img id="lightboxImg" alt="preview">
     <button class="nav next">❯</button>
   </div>
 
